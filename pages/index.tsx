@@ -20,6 +20,44 @@ export default function Home() {
   const [matchCount, setMatchCount] = useState<number>(5);
   const [apiKey, setApiKey] = useState<string>("");
 
+  /**
+   * Hardcode for development purposes:
+   */
+  useEffect(() => {
+
+    // Fill chunks with dummy data
+    if (chunks.length === 0) {
+      const dummyData = [
+        {
+          id: "1",
+          content: "This is a dummy chunk of text. It is not real. It is only here for testing purposes."
+        },
+        {
+          id: "2",
+          content: "This is a dummy chunk of text. It is not real. It is only here for testing purposes."
+        },
+        {
+          id: "3",
+          content: "This is a dummy chunk of text. It is not real. It is only here for testing purposes."
+        },
+        {
+          id: "4",
+          content: "This is a dummy chunk of text. It is not real. It is only here for testing purposes."
+        },
+        {
+          id: "5",
+          content: "This is a dummy chunk of text. It is not real. It is only here for testing purposes."
+        },
+      ]
+      setChunks(dummyData);
+
+      // Fill answer with dummy data:
+
+    }
+
+
+  });
+
   const handleSearch = async () => {
     if (!apiKey) {
       alert("Please enter an API key.");
@@ -370,6 +408,15 @@ export default function Home() {
                           </a>
                         </div>
                         <div className="mt-2">{chunk.content}</div>
+                        <div className="mt-4">
+                          <iframe
+                            width="100%"
+                            height="315"
+                            src="https://www.youtube.com/embed/sL6st5qFryw"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                          ></iframe>
+                        </div>
                       </div>
                     </div>
                   ))}
@@ -396,6 +443,15 @@ export default function Home() {
                         </a>
                       </div>
                       <div className="mt-2">{chunk.content}</div>
+                      <div className="mt-4">
+                        <iframe
+                          width="100%"
+                          height="315"
+                          src="https://www.youtube.com/embed/sL6st5qFryw"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        ></iframe>
+                      </div>
                     </div>
                   </div>
                 ))}
